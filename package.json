@@ -1,0 +1,25 @@
+{
+  "name": "villa-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website of Shainna L. Villa - Frontend Web Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "dev": "live-server --port=3000 --open=/index.html",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Deploy to your hosting service'"
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "web-developer",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Shainna L. Villa",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

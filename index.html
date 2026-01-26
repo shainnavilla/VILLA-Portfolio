@@ -4,56 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of a passionate Frontend Developer">
-    <title>My Portfolio | Frontend Developer</title>
+    <title>Shainna L. Villa | Frontend Developer</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">MyPortfolio</a>
-            <button id="mobile-menu" class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#growth">Growth</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li>
-                    <button id="dark-mode-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <header id="home" class="section">
-            <div class="hero-container">
-                <div class="profile-image-container">
-                    <img src="assets/images/profile.jpg" alt="Shainna L. Villa" class="profile-image">
-                    <div class="image-overlay"></div>
-                </div>
-                <div class="hero-content">
-                    <span class="greeting">Hello, I'm</span>
-                    <h1 class="hero">Shainna L. Villa</h1>
-                    <p class="subtitle">Frontend Web Developer</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                        <a href="#projects" class="btn btn-outline">View My Work</a>
+    <div class="portfolio-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <div class="profile-image-wrapper">
+                        <img src="assets/images/profile.jpg" alt="Shainna L. Villa" class="profile-image">
+                        <div class="glowing-ring"></div>
+                    </div>
+                    <h1 class="profile-name">Shainna L. Villa</h1>
+                    <p class="profile-title">Frontend Web Developer</p>
+                    <p class="profile-headline">I build high-performance frontend experiences that bridge the gap between clean code and intuitive design.</p>
+                    
+                    <div class="profile-buttons">
+                        <a href="#contact" class="btn-glass">Get in Touch</a>
+                        <a href="#projects" class="btn-glass">View Work</a>
                     </div>
                 </div>
+
+                <!-- Navigation -->
+                <nav class="sidebar-nav">
+                    <ul class="nav-list">
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#growth" class="nav-link">Learning Journey</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Dark Mode Toggle -->
+                <button id="dark-mode-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
-        </header>
-        
-        <section id="about" class="section">
-            <div class="about-container">
-                <h2>👩‍💻 <span class="highlight">About</span> Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>I'm a <strong>Frontend Web Developer</strong> passionate about building responsive, user-friendly websites using modern web technologies like HTML, CSS, and JavaScript. I enjoy turning designs into interactive, visually appealing experiences while focusing on performance and accessibility. I'm continuously learning and improving my skills to create meaningful and impactful digital products.</p>
+        </aside>
+
+        <!-- Right Content Area -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- About Section -->
+                <section id="about" class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">About Me</h2>
+                    </div>
+                    
+                    <div class="about-content">
+                        <p>I'm a <strong>Frontend Web Developer</strong> passionate about building responsive, user-friendly websites using modern web technologies like HTML, CSS, and JavaScript. I enjoy turning designs into interactive, visually appealing experiences while focusing on performance and accessibility.</p>
+                        
                         <div class="skills-tags">
                             <span class="tag">HTML5</span>
                             <span class="tag">CSS3</span>
@@ -62,207 +67,231 @@
                             <span class="tag">Responsive Design</span>
                         </div>
                     </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">2+</span>
-                            <span class="stat-label">Years Experience</span>
+
+                    <!-- 3D Stat Cards -->
+                    <div class="stats-container">
+                        <div class="stat-card-3d">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="projects" class="section">
-            <h2>My Projects</h2>
-            
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="react">React</button>
-                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-                <button class="filter-btn" data-filter="pwa">PWA</button>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project react">
-                    <div class="project-content">
-                        <h3>TaskMaster Pro</h3>
-                        <p>A responsive task management application that helps users organize their daily tasks efficiently with drag-and-drop functionality.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#" class="btn btn-outline"><i class="fab fa-github"></i> Source Code</a>
+                        <div class="stat-card-3d">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Projects</div>
                         </div>
                     </div>
-                    <div class="project-tech">
-                        <span class="tag">React</span>
-                        <span class="tag">Context API</span>
-                        <span class="tag">Responsive</span>
-                    </div>
-                </div>
-                
-                <div class="project fullstack">
-                    <div class="project-content">
-                        <h3>BudgetTracker</h3>
-                        <p>Full-stack expense tracking application with user authentication, data visualization, and financial insights.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#" class="btn btn-outline"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tag">MERN Stack</span>
-                        <span class="tag">JWT Auth</span>
-                        <span class="tag">Chart.js</span>
-                    </div>
-                </div>
-                
-                <div class="project pwa">
-                    <div class="project-content">
-                        <h3>NoteSphere</h3>
-                        <p>Progressive Web App for taking and organizing notes with offline capabilities, rich text editing, and cloud sync.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#" class="btn btn-outline"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tag">PWA</span>
-                        <span class="tag">IndexedDB</span>
-                        <span class="tag">Service Workers</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="growth" class="section">
-            <h2>My Learning Journey</h2>
-            
-            <div class="growth-container">
-                <div class="growth-card">
-                    <div class="growth-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Currently Learning</h3>
-                    <ul class="growth-list">
-                        <li><i class="fas fa-code"></i> Advanced React Patterns</li>
-                        <li><i class="fab fa-js"></i> TypeScript Mastery</li>
-                        <li><i class="fas fa-vial"></i> Testing with Jest & RTL</li>
-                        <li><i class="fas fa-tachometer-alt"></i> Performance Optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="growth-card">
-                    <div class="growth-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Future Goals</h3>
-                    <ul class="growth-list">
-                        <li><i class="fab fa-react"></i> Next.js & SSR</li>
-                        <li><i class="fas fa-project-diagram"></i> GraphQL & Apollo</li>
-                        <li><i class="fas fa-universal-access"></i> Advanced a11y</li>
-                        <li><i class="fas fa-rocket"></i> CI/CD Pipelines</li>
-                    </ul>
-                </div>
-                
-                <div class="growth-card">
-                    <div class="growth-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Current Stack</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact" class="section">
-            <h2>Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Let's work together!</h3>
-                    <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!</p>
-                    
-                    <div class="contact-methods">
-                        <a href="mailto:your.email@example.com" class="contact-link">
-                            <i class="fas fa-envelope"></i> your.email@example.com
-                        </a>
-                        <a href="https://github.com/yourusername" target="_blank" class="contact-link">
-                            <i class="fab fa-github"></i> github.com/yourusername
-                        </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">
-                            <i class="fab fa-linkedin"></i> linkedin.com/in/yourusername
-                        </a>
-                    </div>
-                </div>
-                
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Projects</h2>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="laptop-mockup">
+                                <div class="laptop-screen">
+                                    <div class="project-preview">
+                                        <h3>TaskMaster Pro</h3>
+                                        <p>Task management application with drag-and-drop functionality</p>
+                                    </div>
+                                </div>
+                                <div class="laptop-base"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>TaskMaster Pro</h3>
+                                <p>A responsive task management application that helps users organize their daily tasks efficiently with drag-and-drop functionality.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Context API</span>
+                                    <span class="tech-tag">Responsive</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                    <a href="https://github.com/shainnavilla" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="laptop-mockup">
+                                <div class="laptop-screen">
+                                    <div class="project-preview">
+                                        <h3>BudgetTracker</h3>
+                                        <p>Full-stack expense tracking application</p>
+                                    </div>
+                                </div>
+                                <div class="laptop-base"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>BudgetTracker</h3>
+                                <p>Full-stack expense tracking application with user authentication, data visualization, and financial insights.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">MERN Stack</span>
+                                    <span class="tech-tag">JWT Auth</span>
+                                    <span class="tech-tag">Chart.js</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                    <a href="https://github.com/shainnavilla" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="laptop-mockup">
+                                <div class="laptop-screen">
+                                    <div class="project-preview">
+                                        <h3>NoteSphere</h3>
+                                        <p>Progressive Web App for note-taking</p>
+                                    </div>
+                                </div>
+                                <div class="laptop-base"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>NoteSphere</h3>
+                                <p>Progressive Web App for taking and organizing notes with offline capabilities, rich text editing, and cloud sync.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">PWA</span>
+                                    <span class="tech-tag">IndexedDB</span>
+                                    <span class="tech-tag">Service Workers</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                    <a href="https://github.com/shainnavilla" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Learning Journey Timeline -->
+                <section id="growth" class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Learning Journey</h2>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Currently Learning</h3>
+                                <ul class="learning-list">
+                                    <li><i class="fas fa-code"></i> Advanced React Patterns</li>
+                                    <li><i class="fab fa-js"></i> TypeScript Mastery</li>
+                                    <li><i class="fas fa-vial"></i> Testing with Jest & RTL</li>
+                                    <li><i class="fas fa-tachometer-alt"></i> Performance Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Future Goals</h3>
+                                <ul class="learning-list">
+                                    <li><i class="fab fa-react"></i> Next.js & SSR</li>
+                                    <li><i class="fas fa-project-diagram"></i> GraphQL & Apollo</li>
+                                    <li><i class="fas fa-universal-access"></i> Advanced a11y</li>
+                                    <li><i class="fas fa-rocket"></i> CI/CD Pipelines</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Current Stack</h3>
+                                <div class="tech-grid">
+                                    <div class="tech-item">
+                                        <i class="fab fa-html5"></i>
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <i class="fab fa-css3-alt"></i>
+                                        <span>CSS3</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <i class="fab fa-js"></i>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <i class="fab fa-react"></i>
+                                        <span>React</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <i class="fab fa-git-alt"></i>
+                                        <span>Git</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <i class="fab fa-github"></i>
+                                        <span>GitHub</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Get In Touch</h2>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                    <div class="contact-container">
+                        <div class="contact-info">
+                            <h3>Let's work together!</h3>
+                            <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!</p>
+                            
+                            <div class="contact-methods">
+                                <a href="mailto:shainnavilla2@gmail.com" class="contact-link">
+                                    <i class="fas fa-envelope"></i> shainnavilla2@gmail.com
+                                </a>
+                                <a href="https://github.com/shainnavilla" target="_blank" class="contact-link">
+                                    <i class="fab fa-github"></i> github.com/shainnavilla
+                                </a>
+                                <a href="https://linkedin.com/in/shainnavilla" target="_blank" class="contact-link">
+                                    <i class="fab fa-linkedin"></i> linkedin.com/in/shainnavilla
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form-wrapper">
+                            <form id="contact-form" class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                    <small class="form-help-text">This message will be sent to: shainnavilla2@gmail.com</small>
+                                </div>
+                                
+                                <button type="submit" class="btn-submit">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-                </form>
+                </section>
             </div>
-        </section>
-        
-        <footer class="footer">
-            <div class="container">
-                <p>© 2024 My Portfolio. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="CodePen"><i class="fab fa-codepen"></i></a>
-                </div>
-            </div>
-        </footer>
+        </main>
     </div>
-    
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>
