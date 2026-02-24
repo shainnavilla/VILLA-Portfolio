@@ -78,7 +78,7 @@ if (darkModeToggle) {
     });
 }
 
-// Contact form submission
+// Contact form submission with mailto fallback
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -89,35 +89,59 @@ if (contactForm) {
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
         
-        // Create mailto link with fixed subject
-        const mailtoSubject = encodeURIComponent('New Message from Portfolio Contact Form');
-        const mailtoBody = encodeURIComponent(
-            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-        );
-        
-        const mailtoLink = `mailto:shainnavilla2@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-        
         // Show loading state
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
         
-        // Open email client
-        window.location.href = mailtoLink;
-        
-        // Show success notification
-        setTimeout(() => {
-            showNotification('Message sent successfully to shainnavilla2@gmail.com!', 'success');
+        // Try Formspree first if on a server
+        if (window.location.protocol !== 'file:') {
+            const formData = new FormData(contactForm);
             
-            // Reset form
-            contactForm.reset();
-            
-            // Reset button
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showNotification('Message sent successfully to shainnavilla2@gmail.com!', 'success');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                // Fallback to mailto
+                openEmailClient(name, email, message);
+            })
+            .finally(function() {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        } else {
+            // Direct file access - use mailto
+            openEmailClient(name, email, message);
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 1000);
+        }
     });
+}
+
+function openEmailClient(name, email, message) {
+    const subject = encodeURIComponent('New Message from Portfolio Contact Form');
+    const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+    
+    const mailtoLink = `mailto:shainnavilla2@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
+    showNotification('Opening your email client to send the message...', 'success');
+    contactForm.reset();
 }
 
 // Notification function

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+    </head>
 <body>
     <div class="portfolio-container">
         <!-- Left Sidebar -->
@@ -264,7 +264,9 @@
                         </div>
                         
                         <div class="contact-form-wrapper">
-                            <form id="contact-form" class="contact-form">
+                            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xbljvvqy" method="POST">
+                                <input type="hidden" name="_subject" value="New Message from Portfolio Contact Form">
+                                <input type="hidden" name="_template" value="table">
                                 <div class="form-group">
                                     <label for="name">Name</label>
                                     <input type="text" id="name" name="name" required>
@@ -278,7 +280,7 @@
                                 <div class="form-group">
                                     <label for="message">Message</label>
                                     <textarea id="message" name="message" rows="5" required></textarea>
-                                    <small class="form-help-text">This message will be sent to: shainnavilla2@gmail.com</small>
+                                    <small class="form-help-text">This message will be sent directly to: shainnavilla2@gmail.com</small>
                                 </div>
                                 
                                 <button type="submit" class="btn-submit">
