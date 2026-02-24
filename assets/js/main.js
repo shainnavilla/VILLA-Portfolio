@@ -248,3 +248,54 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const statusEl = document.createElement('div');
+    statusEl.className = 'form-status';
+    statusEl.style.marginTop = '0.5rem';
+    form.appendChild(statusEl);
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        const originalHTML = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        const formData = new FormData(form);
+
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                statusEl.textContent = 'Message sent — thank you! I will reply soon.';
+                statusEl.style.color = 'green';
+                form.reset();
+            } else {
+                let errText = 'There was a problem sending your message.';
+                try {
+                    const data = await res.json();
+                    if (data && data.error) errText = data.error;
+                } catch (err) {
+                    // ignore JSON parse errors
+                }
+                statusEl.textContent = errText;
+                statusEl.style.color = 'red';
+            }
+        } catch (err) {
+            statusEl.textContent = 'Network error. Please try again later.';
+            statusEl.style.color = 'red';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalHTML;
+            setTimeout(() => { statusEl.textContent = ''; }, 7000);
+        }
+    });
+});
